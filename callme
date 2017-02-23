@@ -1,0 +1,11 @@
+$ pip install pycall
+# Initiate an outbound call to 1-888-222-3333 and say
+# 'hello world!' when the caller answers.
+
+from pycall import CallFile, Call, Application
+
+call = Call('SIP/flowroute/12316510708')
+action = Application('Playback', 'hello-world')
+
+c = CallFile(call, action)
+c.spool()
